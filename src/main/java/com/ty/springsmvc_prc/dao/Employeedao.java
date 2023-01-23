@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import com.ty.springsmvc_prc.dto.Employee;
 
 @Repository
@@ -51,9 +52,16 @@ public class Employeedao {
 		return entityManager.find(Employee.class, id);
 	}
 	
-	public void getEmployee() {
+	public List<Employee> getEmployee() {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		Query query= entityManager.createQuery("select e from Employee s",Employee.class);
+		Query query= entityManager.createQuery("select e from Employee e",Employee.class);
 		List<Employee>employee= query.getResultList();
+		return employee;
+	}
+	public Employee getEmployeeEmail(String email) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		Query query= entityManager.createQuery("Select e from Employee e where e.email=?1",Employee.class).setParameter(1, email);
+		
+		return (Employee)query.getSingleResult();
 	}
 }

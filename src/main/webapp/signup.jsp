@@ -15,13 +15,13 @@
 		<br>
 		<br>
 
+		<form:label path="email">Email</form:label>
+		<form:input path="email" />
+		<br>
+		<br>
+		
 		<form:label path="phone">Phone</form:label>
 		<form:input path="phone" />
-		<br>
-		<br>
-
-		<form:label path="email">Address</form:label>
-		<form:input path="email" />
 		<br>
 		<br>
 
