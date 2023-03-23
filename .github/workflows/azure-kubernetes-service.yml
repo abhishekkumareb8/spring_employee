@@ -6,7 +6,7 @@ name: Build and deploy an app to AKS
     workflow_dispatch: null
 env:
     AZURE_CONTAINER_REGISTRY: draftaks
-    CLUSTER_NAME: draftasktest
+    CLUSTER_NAME: draftakstest
     CONTAINER_NAME: spring
     DEPLOYMENT_MANIFEST_PATH: ./manifests
     IMAGE_PULL_SECRET_NAME: draftakssecret
